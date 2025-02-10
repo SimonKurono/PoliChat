@@ -1,0 +1,113 @@
+/* src/styles/ChatWindow.css */
+
+/* Overall chat window container */
+.chat-window {
+  max-width: 800px;
+  margin: 40px auto;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-width: 60vw; 
+}
+
+/* Container for messages */
+.messages {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow-y: auto;
+  background: #fff;
+  opacity: 0.90;
+}
+
+
+/* Base message bubble style */
+.message {
+  padding: 12px 16px;
+  margin: 8px 0;
+  border-radius: 8px;
+  max-width: 75%;
+  line-height: 1.4;
+  word-wrap: break-word;
+  font-size: 15px;
+  text-align: left;  /* Align text to the left */
+}
+
+/* User messages (right aligned container, but text inside left aligned) */
+/* User messages (aligned to the right container, text inside remains left-aligned) */
+.message.user {
+  background: #e1f5fe; /* Light blue for user messages */
+  border: 1px solid #81d4fa;
+  text-align: left;  /* Text inside the bubble remains left-aligned */
+  align-self: flex-end;  /* This aligns the entire bubble to the right */
+}
+
+
+/* Assistant messages (left aligned) */
+.message.assistant {
+  background: #ffebee; /* Soft red/pink for the debate tone */
+  border: 1px solid #ef9a9a;
+  border-radius: 6px;
+  text-align: left;  /* Align text to the left */
+}
+
+/* Accent: A subtle gradient border for extra visual interest on assistant messages */
+.message.assistant {
+  border-image: linear-gradient(to right, #ff8a80, #ff5252) 1;
+}
+
+/* Input area at the bottom */
+.input-area {
+  display: flex;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+  background: #ffffff;
+}
+
+/* Styling for the text input */
+.input-area input {
+  flex: 1;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+/* Focus effect for the input */
+.input-area input:focus {
+  border-color: #1976d2; /* Deep blue accent */
+  box-shadow: 0 0 8px rgba(25, 118, 210, 0.3);
+}
+
+/* Styling for the send button */
+.input-area button {
+  padding: 14px 24px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #1976d2; /* Deep blue button */
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.input-area button:hover {
+  background-color: #1565c0;
+}
+
+/* Optional: A loading indicator style for when the bot is thinking */
+.loading {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  margin-top: 10px;
+}
